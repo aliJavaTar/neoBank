@@ -5,7 +5,7 @@ import org.springframework.security.web.SecurityFilterChain
 
 class SpringSecurity {
 
-    fun configure(httpSecurity: HttpSecurity): SecurityFilterChain {
-        httpSecurity.authorizeRequests()
-    }
+//    fun configure(httpSecurity: HttpSecurity): SecurityFilterChain {
+//        httpSecurity.authorizeRequests()
+//    }
 }
