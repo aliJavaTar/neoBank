@@ -1,4 +1,4 @@
-package com.smart.neobank.infrastructure.entity
+package com.smart.neobank.infrastructure.jpa.entity
 
 import jakarta.persistence.*
 
@@ -6,9 +6,9 @@ import jakarta.persistence.*
 @Table(name = "users")
 data class User(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    var id: Int,
     @Column(nullable = false, unique = true)
-    val username: String,
+    var username: String,
     @Column(nullable = false)
-    val password: String
+    var password: String
 )
