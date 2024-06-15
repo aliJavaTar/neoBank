@@ -25,13 +25,14 @@ class SecurityConfiguration(
             .csrf { it.disable() }
             .authorizeHttpRequests {
                 it
-                    .requestMatchers("/api/user/register", "api/auth/refresh", "/error")
+                    .requestMatchers("/api/auth", "api/auth/refresh", "/error")
                     .permitAll()
-                    .requestMatchers(HttpMethod.POST, "/api/user")
-                    .permitAll()
-                    .requestMatchers("/api/user**").authenticated()
-                    .anyRequest()
-                    .fullyAuthenticated()
+//                    .requestMatchers(HttpMethod.POST, "/api/user")
+//                    .permitAll()
+//                    .requestMatchers("/api/user**")
+//                    .hasRole("ADMIN")
+//                    .anyRequest()
+//                    .fullyAuthenticated()
             }
             .sessionManagement {
                 it.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

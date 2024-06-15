@@ -1,5 +1,5 @@
 ### Post "Hello!"
-POST http://localhost:8080/create
+POST http://localhost:8080/api/auth
 Content-Type: application/json
 
 {

@@ -14,9 +14,8 @@ import org.springframework.web.server.ResponseStatusException
 
 @RestController
 @RequestMapping("/api/auth")
-class AuthController(
-    private val authenticationService: AuthenticationService
-) {
+class AuthController(private val authenticationService: AuthenticationService)
+{
     @PostMapping
     fun authenticate(
         @RequestBody authRequest: AuthenticationRequest): AuthenticationResponse =

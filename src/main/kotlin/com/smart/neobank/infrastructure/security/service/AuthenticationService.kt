@@ -62,5 +62,5 @@ class AuthenticationService(
 
     private fun getRefreshTokenExpiration(): Date =
         Date(System.currentTimeMillis() + jwtProperties.refreshTokenExpiration)
-}
+
 }
