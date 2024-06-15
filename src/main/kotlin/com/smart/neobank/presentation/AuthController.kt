@@ -14,20 +14,21 @@ import org.springframework.web.server.ResponseStatusException
 
 @RestController
 @RequestMapping("/api/auth")
-class AuthController(private val authenticationService: AuthenticationService)
-{
-    @PostMapping
+class AuthController(private val authenticationService: AuthenticationService) {
+    @PostMapping("/user")
     fun authenticate(
-        @RequestBody authRequest: AuthenticationRequest): AuthenticationResponse =
+        @RequestBody authRequest: AuthenticationRequest
+    ): AuthenticationResponse =
         authenticationService.authentication(authRequest)
 
-    @PostMapping("/refresh")
+    @PostMapping("/refreshToken")
     fun refreshAccessToken(
         @RequestBody request: RefreshTokenRequest
     ): TokenResponse =
         authenticationService.refreshAccessToken(request.token)
             ?.mapToTokenResponse()
             ?: throw ResponseStatusException(HttpStatus.FORBIDDEN, "Invalid refresh token.")
+
     private fun String.mapToTokenResponse(): TokenResponse =
         TokenResponse(
             token = this

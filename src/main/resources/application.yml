@@ -1,4 +1,4 @@
 jwt:
-  key: ${JWT_KEY}
+  key: "skadfsaajdfreterw8SADF:KASglblkgnljrwglenlIASTSRY308509056;lkfa;al jj sal;diarfewsdfsdf235e"
   access-token-expiration: 3600000
   refresh-token-expiration: 86400000
