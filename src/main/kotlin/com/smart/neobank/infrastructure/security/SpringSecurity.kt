@@ -3,6 +3,7 @@ package com.smart.neobank.infrastructure.security
 import com.smart.neobank.infrastructure.security.filter.JwtAuthenticationFilter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
 import org.springframework.security.authentication.AuthenticationProvider
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
@@ -26,9 +27,9 @@ class SecurityConfiguration(
                 it
                     .requestMatchers("/api/auth/user", "api/auth/refresh", "/error")
                     .permitAll()
-//                    .requestMatchers(HttpMethod.POST, "/api/user")
-//                    .permitAll()
-//                    .requestMatchers("/api/user**")
+                    .requestMatchers(HttpMethod.POST, "/api/user")
+                    .permitAll()
+                    .requestMatchers("/api/auth/**").permitAll()
 //                    .hasRole("ADMIN")
 //                    .anyRequest()
 //                    .fullyAuthenticated()
