@@ -3,7 +3,7 @@ package com.smart.neobank
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication(scanBasePackages = ["com.smart.neobank.infrastructure"])
+@SpringBootApplication
 class NeoBankApplication
 
 fun main() {
